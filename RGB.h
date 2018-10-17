@@ -1,4 +1,4 @@
-/* RGB.h - Manage a tri color LED
+/* RGB.h - Tri color LED Management Library
  * 
  * Author: Márcio Pessoa <marcio.pessoa@sciemon.com>
  * Contributors: none

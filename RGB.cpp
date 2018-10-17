@@ -1,4 +1,4 @@
-/* RGB.cpp - Manage a tri color LED
+/* RGB.cpp - Tri color LED Management Library
  * 
  */
 

@@ -4,6 +4,11 @@
  * Contributors: none
  *
  * Change log
+ * 2023-04-18
+ *         * all
+ *         Refactor: Rename variables
+ *         Fix: change variables type from byte to unsigned char
+ *
  * 2015-09-04
  *         * refresh
  *         Optimized code on inverse method.

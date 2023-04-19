@@ -105,16 +105,10 @@ void RGB::refresh() {
   unsigned char green = _green * _brightness;
   unsigned char blue = _blue * _brightness;
   if (_inverse) {
-    //~ R = map(R, 0, 255, 255, 0);
-    //~ G = map(G, 0, 255, 255, 0);
-    //~ B = map(B, 0, 255, 255, 0);
     red = 255 - red;
     green = 255 - green;
     blue = 255 - blue;
   }
-  // Debug information
-  //~ Serial.println(String(R) + "," + String(G) + "," + String(B) + "," +
-  //_brightness);
   analogWrite(_red_pin, red);
   analogWrite(_green_pin, green);
   analogWrite(_blue_pin, blue);

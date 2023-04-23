@@ -5,21 +5,10 @@
 #include "RGB.h"
 #include "Arduino.h"
 
-/* RGB
- *
- * Description
- *   Manage a tri color LED.
- *
- *   RGB(unsigned char Rpin, unsigned char Gpin, unsigned char Bpin)
- *
- * Parameters
- *   Rpin: Arduino red LED pin
- *   Gpin: Arduino green LED pin
- *   Bpin: Arduino blue LED pin
- *
- * Returns
- *   void
- */
+/// @brief Manage a tri color LED.
+/// @param red_pin  Arduino red LED pin
+/// @param green_pin  Arduino green LED pin
+/// @param blue_pin  Arduino blue LED pin
 RGB::RGB(unsigned char red_pin, unsigned char green_pin,
          unsigned char blue_pin) {
   pinMode(red_pin, OUTPUT);
@@ -32,36 +21,13 @@ RGB::RGB(unsigned char red_pin, unsigned char green_pin,
   _inverse = false;
 }
 
-/* inverse
- *
- * Description
- *   Set LED color.
- *
- *   a_led.inverse()
- *
- * Parameters
- *   inverse: true of false
- *
- * Returns
- *   void
- */
+/// @brief Set LED color inverse mode.
 void RGB::inverse() { _inverse = !_inverse; }
 
-/* set
- *
- * Description
- *   Set LED color.
- *
- *   a_led.set(unsigned char R, unsigned char G, unsigned char B)
- *
- * Parameters
- *   Rvalue: Set red led intensity
- *   Gvalue: Set green led intensity
- *   Bvalue: Set blue led intensity
- *
- * Returns
- *   void
- */
+/// @brief Set LED color.
+/// @param red Set red led intensity
+/// @param green Set green led intensity
+/// @param blue Set blue led intensity
 void RGB::set(unsigned char red, unsigned char green, unsigned char blue) {
   _red = red;
   _green = green;
@@ -69,37 +35,14 @@ void RGB::set(unsigned char red, unsigned char green, unsigned char blue) {
   refresh();
 }
 
-/* brightness
- *
- * Description
- *   Set LED brightness.
- *
- *   a_led.set(float brightness)
- *
- * Parameters
- *   brightness: Brightness value (0 to 1)
- *
- * Returns
- *   void
- */
+/// @brief Set LED brightness.
+/// @param brightness Brightness value (0 to 1)
 void RGB::brightness(float brightness) {
   _brightness = brightness;
   refresh();
 }
 
-/* refresh
- *
- * Description
- *   Refresh LED.
- *
- *   a_led.refresh()
- *
- * Parameters
- *   none
- *
- * Returns
- *   void
- */
+/// @brief Refresh LED.
 void RGB::refresh() {
   unsigned char red = _red * _brightness;
   unsigned char green = _green * _brightness;
